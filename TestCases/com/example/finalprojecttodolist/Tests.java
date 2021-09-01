@@ -83,7 +83,7 @@ class Tests {
 
     @Test
     //Data persistence testing of completing a to-do task in a custom to-do list
-    void complete_custom_write_to_file() throws IOException {
+    void complete_todo_custom() throws IOException {
         //create a new file to store all the To-do objects in a custom to-do list
         completed_todo_custom.create_file("test_file.txt");
         File test_file = new File("test_file.txt");
