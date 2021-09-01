@@ -226,22 +226,20 @@ public class Controller {
         for (File f : all_files) {
             String file_name = f.getName();
             if (f.isFile() && file_name.substring(file_name.length() - 3).equals("txt")) {
-                if (file_name.length() > 9){
-                    if (file_name.substring(0, 9).equals("completed") && !file_name.equals("completed_today.txt")){
-                        f.delete();
-                    }
-                    else{
-                        PrintWriter pw = new PrintWriter(f);
-                        pw.close();
-                    }
-                }
-                else if (!(file_name.equals("all.txt") || file_name.equals("today.txt"))) {
-                    f.delete();
-                }
-                else{
-                    //System.out.println(f);
+                if (file_name.equals("completed_today.txt")){
+                    System.out.println(file_name + " is cleared");
                     PrintWriter pw = new PrintWriter(f);
                     pw.close();
+                }
+                else if (file_name.equals("all.txt") || file_name.equals("today.txt")) {
+                    System.out.println(file_name + " is cleared");
+                    PrintWriter pw = new PrintWriter(f);
+                    pw.close();
+                }
+                else{
+                    if (f.delete()){
+                        System.out.println(file_name + " is deleted");
+                    }
                 }
             }
         }
