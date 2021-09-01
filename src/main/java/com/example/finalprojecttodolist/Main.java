@@ -6,7 +6,6 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-//todo Test cases are well designed (test all scenarios) - the rest of monday
 
 public class Main extends Application {
     @Override
